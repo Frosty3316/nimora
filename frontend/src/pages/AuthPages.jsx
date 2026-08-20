@@ -30,7 +30,7 @@ export function LoginPage() {
   return (
     <AuthShell
       title="Welcome back"
-      subtitle="Sign in to manage projects, tasks, and deadlines with your team."
+      subtitle="Team project and task management made easy"
     >
       <form className="space-y-4" onSubmit={onSubmit}>
         <ErrorBanner message={error?.message} />
@@ -135,7 +135,7 @@ function AuthShell({ title, subtitle, children }) {
             Admins shape the plan. Members update status, leave progress notes, and never lose a deadline change.
           </p>
         </div>
-        <p className="text-sm text-[#b7aa98]">Full-stack team project & task management</p>
+        <p className="text-sm text-[#b7aa98]">Team project and task management made easy</p>
       </section>
       <section className="grid place-items-center px-4 py-10">
         <div className="w-full max-w-md rounded-3xl bg-cream p-8 shadow-sm">

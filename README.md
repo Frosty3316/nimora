@@ -66,6 +66,8 @@ This starts:
 - API: http://localhost:4000
 - Web app: http://localhost:5173
 
+Keep both terminals open. The API process should stay running and **not** print `Completed running`. If port 5173 is busy, Vite may jump to 5174; use the URL it prints.
+
 ### Manual setup
 
 ```bash

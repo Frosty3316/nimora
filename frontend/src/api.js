@@ -1,5 +1,5 @@
 const TOKEN_KEY = "nimora_token";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
+const API_URL = import.meta.env.VITE_API_URL || "/api";
 
 export function getToken() {
   return localStorage.getItem(TOKEN_KEY);

@@ -13,7 +13,13 @@ const port = Number(process.env.PORT) || 4000;
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin(origin, callback) {
+      if (!origin || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+        callback(null, true);
+        return;
+      }
+      callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -32,6 +38,15 @@ app.use("/api/dashboard", dashboardRouter);
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(port, () => {
+const server = app.listen(port, "0.0.0.0", () => {
   console.log(`Nimora API running on http://localhost:${port}`);
+});
+
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.error(`Port ${port} is already in use. Stop the other process and try again.`);
+  } else {
+    console.error("Failed to start API:", err.message);
+  }
+  process.exit(1);
 });
