@@ -11,14 +11,23 @@ import { errorHandler, notFound } from "./middleware/error.js";
 const app = express();
 const port = Number(process.env.PORT) || 4000;
 
+app.set("trust proxy", 1);
+
+function isAllowedOrigin(origin) {
+  if (!origin) return true;
+  if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
+  if (origin.endsWith(".netlify.app")) return true;
+  const extra = (process.env.CLIENT_ORIGIN || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  return extra.includes(origin);
+}
+
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
-        callback(null, true);
-        return;
-      }
-      callback(new Error("Not allowed by CORS"));
+      callback(null, isAllowedOrigin(origin));
     },
     credentials: true,
   })
