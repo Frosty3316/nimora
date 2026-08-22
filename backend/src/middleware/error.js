@@ -20,8 +20,9 @@ export function errorHandler(err, _req, res, _next) {
   }
 
   console.error(err);
+  const expose = process.env.NODE_ENV !== "production" && err.message;
   res.status(err.status || 500).json({
-    error: { message: err.message || "Unexpected server error." },
+    error: { message: expose || "Unexpected server error." },
   });
 }
 

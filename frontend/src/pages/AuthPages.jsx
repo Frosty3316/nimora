@@ -7,7 +7,7 @@ import { fieldError } from "../lib";
 export function LoginPage() {
   const { user, login } = useAuth();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: "admin@nimora.app", password: "Admin@123" });
+  const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
   const [pending, setPending] = useState(false);
 
@@ -38,6 +38,7 @@ export function LoginPage() {
           <input
             className={inputClass}
             type="email"
+            autoComplete="username"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
@@ -47,6 +48,7 @@ export function LoginPage() {
           <input
             className={inputClass}
             type="password"
+            autoComplete="current-password"
             value={form.password}
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             required

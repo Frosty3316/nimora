@@ -251,5 +251,15 @@ Demo logins are the same as local: `admin@nimora.app` / `Admin@123`.
 ## Submission notes
 
 - GitHub: https://github.com/Frosty3316/nimora
-- Live site: Netlify URL after deploy
+- Live site: https://nimoramanagement.netlify.app
 - API: https://nimora-phh7.onrender.com
+
+Demo logins: `admin@nimora.app` / `Admin@123` and `alex@nimora.app` / `Member@123`.
+
+### Security
+
+- Passwords are stored as bcrypt hashes, never plaintext.
+- API routes are JWT-protected with role checks (admin vs member).
+- Secrets (`.env`, JWT, database file) are gitignored; production uses Render env vars.
+- Login/register are rate-limited. Responses omit password hashes and stack traces.
+- HTTPS is provided by Netlify and Render. The browser talks to Netlify, which proxies `/api` to Render.

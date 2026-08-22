@@ -1,4 +1,4 @@
-import { verifyToken } from "../lib/auth.js";
+import { publicUser, verifyToken } from "../lib/auth.js";
 import { prisma } from "../lib/prisma.js";
 
 export async function requireAuth(req, res, next) {
@@ -13,7 +13,7 @@ export async function requireAuth(req, res, next) {
     if (!user) {
       return res.status(401).json({ error: { message: "User no longer exists." } });
     }
-    req.user = user;
+    req.user = publicUser(user);
     next();
   } catch {
     return res.status(401).json({ error: { message: "Invalid or expired token." } });
