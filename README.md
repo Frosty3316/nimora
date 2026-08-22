@@ -6,9 +6,10 @@ Nimora lets an **admin** run projects and assign work, while **team members** up
 
 ## Live links
 
-### Render (server): https://nimora-phh7.onrender.com
+### Netlify (App): https://nimoramanagement.netlify.app/
 
-### Netlify (demo): https://nimoramanagement.netlify.app/
+### Render (API health): https://nimora-phh7.onrender.com
+The first visit after idle time can take about a minute (Render free tier).
 
 ## Tech stack
 
