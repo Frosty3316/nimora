@@ -4,6 +4,12 @@ Team project and task management app for the Full Stack Developer assignment.
 
 Nimora lets an **admin** run projects and assign work, while **team members** update status, leave progress notes, and see deadlines. When a task deadline changes, the previous and new dates are stored and shown as a timeline.
 
+## Live links
+
+### Render (server): https://nimora-phh7.onrender.com
+
+### Netlify (demo): https://nimoramanagement.netlify.app/
+
 ## Tech stack
 
 | Layer | Choice |
@@ -225,28 +231,6 @@ backend/     Express API, Prisma schema, seed data
 frontend/     React SPA
 docs/         API documentation
 ```
-
-## Live deployment (Render + Netlify)
-
-The GitHub repo is [Frosty3316/nimora](https://github.com/Frosty3316/nimora).
-
-### 1. API on Render
-
-1. Open [Render Dashboard](https://dashboard.render.com) and sign in with GitHub.
-2. **New > Blueprint**, select `Frosty3316/nimora`, and apply `render.yaml`.
-3. After the first deploy, copy the service URL.
-4. Confirm `https://nimora-phh7.onrender.com/api/health` returns `{ "ok": true }`.
-
-The free instance sleeps after idle time, so the first request can take about a minute.
-
-### 2. Frontend on Netlify
-
-1. Open [Netlify](https://app.netlify.com) and **Add new site > Import an existing project**.
-2. Choose GitHub and `Frosty3316/nimora`.
-3. Netlify reads `netlify.toml` (base `frontend`, publish `dist`).
-4. If the Render URL changes, update the `/api/*` redirect in `netlify.toml` and redeploy.
-
-Demo logins are the same as local: `admin@nimora.app` / `Admin@123`.
 
 ## Submission notes
 
