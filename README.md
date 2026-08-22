@@ -232,14 +232,6 @@ frontend/     React SPA
 docs/         API documentation
 ```
 
-## Submission notes
-
-- GitHub: https://github.com/Frosty3316/nimora
-- Live site: https://nimoramanagement.netlify.app
-- API: https://nimora-phh7.onrender.com
-
-Demo logins: `admin@nimora.app` / `Admin@123` and `alex@nimora.app` / `Member@123`.
-
 ### Security
 
 - Passwords are stored as bcrypt hashes, never plaintext.
