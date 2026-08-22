@@ -10,7 +10,7 @@
 # Proxy API calls to Render so the browser stays same-origin.
 [[redirects]]
   from = "/api/*"
-  to = "https://nimora-api-frosty3316.onrender.com/api/:splat"
+  to = "https://nimora-phh7.onrender.com/api/:splat"
   status = 200
   force = true
 

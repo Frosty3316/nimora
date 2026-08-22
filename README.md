@@ -234,8 +234,8 @@ The GitHub repo is [Frosty3316/nimora](https://github.com/Frosty3316/nimora).
 
 1. Open [Render Dashboard](https://dashboard.render.com) and sign in with GitHub.
 2. **New > Blueprint**, select `Frosty3316/nimora`, and apply `render.yaml`.
-3. After the first deploy, copy the service URL (expected: `https://nimora-api-frosty3316.onrender.com`).
-4. Confirm `https://<your-service>.onrender.com/api/health` returns `{ "ok": true }`.
+3. After the first deploy, copy the service URL.
+4. Confirm `https://nimora-phh7.onrender.com/api/health` returns `{ "ok": true }`.
 
 The free instance sleeps after idle time, so the first request can take about a minute.
 
@@ -244,7 +244,7 @@ The free instance sleeps after idle time, so the first request can take about a 
 1. Open [Netlify](https://app.netlify.com) and **Add new site > Import an existing project**.
 2. Choose GitHub and `Frosty3316/nimora`.
 3. Netlify reads `netlify.toml` (base `frontend`, publish `dist`).
-4. If the Render URL is not `https://nimora-api-frosty3316.onrender.com`, update the `/api/*` redirect in `netlify.toml` and redeploy.
+4. If the Render URL changes, update the `/api/*` redirect in `netlify.toml` and redeploy.
 
 Demo logins are the same as local: `admin@nimora.app` / `Admin@123`.
 
@@ -252,4 +252,4 @@ Demo logins are the same as local: `admin@nimora.app` / `Admin@123`.
 
 - GitHub: https://github.com/Frosty3316/nimora
 - Live site: Netlify URL after deploy
-- API: Render URL after deploy
+- API: https://nimora-phh7.onrender.com
